@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your SorryLink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=free1" />
+</head>
+<body>
+  <main class="app">
+    <section id="loading" class="page active loading-page">
+      <div class="roses">🌹 🌹 🌹</div>
+      <h2>Opening your letter...</h2>
+      <div class="progress"><span></span></div>
+    </section>
+
+    <section id="letter" class="page">
+      <p class="tag">✦ A MESSAGE FOR YOU ✦</p>
+      <h1 id="toName">My Love</h1>
+      <p class="italic">There are things I should have said sooner.<br>This is my attempt.</p>
+      <div id="letterCards"></div>
+      <div class="last-box">
+        <div class="pill">✦ ONE LAST THING FROM ME...</div>
+        <p id="customText"></p>
+      </div>
+      <div class="panel final-card">
+        <div class="rose-big">🌹</div>
+        <h1>You are still<br>my favourite</h1>
+        <p class="italic">In every version of this life, in every universe that exists — I would still choose you.</p>
+        <div class="divider"></div>
+        <p class="sign">With everything I have, — <span id="senderSign"></span></p>
+      </div>
+    </section>
+
+    <section id="error" class="page center-page">
+      <div class="panel">
+        <h2>Link not found</h2>
+        <p class="sub">This letter link is invalid, already opened, or expired after 5 minutes.</p>
+      </div>
+    </section>
+  </main>
+  <script src="view.js?v=free1"></script>
+</body>
+</html>

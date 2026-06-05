@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SorryLink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=free1" />
+</head>
+<body>
+  <button id="musicBtn" class="music">♫</button>
+  <main class="app">
+    <section id="formPage" class="page active">
+      <h1>Create your Love Letter</h1>
+      <p class="sub">Fill in three little things and open<br>a letter made only for them.</p>
+      <div class="panel form-panel">
+        <label>THEIR NAME 🌸</label>
+        <input id="theirName" placeholder="Enter her / his name..." autocomplete="name" />
+        <label>YOUR NAME 💌</label>
+        <input id="yourName" placeholder="Your name..." autocomplete="name" />
+        <div class="divider"></div>
+        <div class="pill">✦ ONE LAST THING FROM ME...</div>
+        <label>YOUR PERSONAL MESSAGE</label>
+        <textarea id="personalMsg" rows="4" placeholder="Write something only you would say to them...🥀"></textarea>
+        <p class="hint">Everything else — the apology, the memories, the love — is already written for you. This is just yours.</p>
+        <button class="main-btn" id="previewBtn">PREVIEW YOUR LETTER 👀</button>
+      </div>
+    </section>
+
+    <section id="loadingPage" class="page loading-page">
+      <div class="roses">🌹 🌹 🌹</div>
+      <h2>Something special is loading for you...</h2>
+      <div class="progress"><span></span></div>
+      <p class="spaced">PREPARED WITH LOVE ✦</p>
+    </section>
+
+    <section id="introPage" class="page center-page">
+      <p class="tag">✦ A MESSAGE FOR YOU ✦</p>
+      <h1 id="recipientBig">My Love</h1>
+      <p class="italic">There are things I should have said sooner.<br>This is my attempt.</p>
+      <button class="main-btn" id="readBtn">READ MY HEART 🌹</button>
+      <p class="spaced small">SECONDS SINCE I STARTED MISSING YOU</p>
+      <div id="seconds" class="seconds">6</div>
+    </section>
+
+    <section id="letterPage" class="page">
+      <h1>Everything I never said</h1>
+      <p class="sub">Scroll and let it settle in.</p>
+      <div id="letterCards"></div>
+      <div class="last-box">
+        <div class="pill">✦ ONE LAST THING FROM ME...</div>
+        <p id="customText"></p>
+      </div>
+      <button class="main-btn" id="meterBtn">ONE MORE THING 🌸</button>
+    </section>
+
+    <section id="meterPage" class="page center-page">
+      <div class="panel meter-panel">
+        <p class="tag">✦ COMPLETELY SCIENTIFIC ✦</p>
+        <h2>The Forgiveness Meter™</h2>
+        <p class="sub">Advanced AI is calculating exactly how much you deserve to be forgiven right now...</p>
+        <div id="meterPercent">50%</div>
+        <div class="meter"><span id="meterFill"></span></div>
+        <p id="meterStatus" class="spaced">Initialising quantum love sensors...</p>
+        <div id="meterResult" class="hidden">
+          <div class="broken">💔</div>
+          <h2>Cuteness Meter Broken</h2>
+          <p>You are officially <b>120%</b> more cute than anyone else in the universe.</p>
+          <button class="main-btn" id="loveBtn">I LOVE YOU 🌹</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="paymentPage" class="page center-page">
+      <div class="panel payment-panel">
+        <p class="tag">✦ PERSONAL FREE VERSION ✦</p>
+        <h2>Create share link</h2>
+        <p class="sub">No payment needed. Your private letter link will be created instantly.</p>
+        <p class="warning">⚠️ Free personal version: anyone with the link can open it. Do not use this for paid/secure sharing.</p>
+        <button class="main-btn" id="payBtn">CREATE FREE LINK 🌹</button>
+        <p id="payStatus" class="hint center"></p>
+      </div>
+    </section>
+
+    <section id="finalPage" class="page center-page">
+      <div class="rose-big">🌹</div>
+      <h1>Your link is ready</h1>
+      <p class="italic">Send this link to the person you made it for.</p>
+      <p class="warning">⚠️ Free personal version: this link does not expire automatically.</p>
+      <input id="shareLinkBox" class="share-box" readonly />
+      <button class="main-btn" id="copyLinkBtn">COPY SHAREABLE LINK 🌹</button>
+      <button class="ghost-btn" id="openLinkBtn">OPEN LINK</button>
+    </section>
+  </main>
+
+  <div class="dots"><span></span><span></span><span></span><span></span><span></span></div>
+  <script src="script.js?v=free1"></script>
+</body>
+</html>
