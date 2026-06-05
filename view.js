@@ -1,5 +1,3 @@
-const API_BASE = 'https://sorrylink-api.tanujsaharan17.workers.dev';
-
 const messages=[
   ['I know I hurt you.','And I hate myself for it more than you know. You never deserved that.'],
   ['You deserved better from me.','Better patience. Better honesty. Better love. I wasn\'t always who you needed, and I\'m sorry.'],
@@ -27,13 +25,17 @@ function updateDots(){
   document.querySelectorAll('.dots span').forEach((dot,i)=>dot.classList.toggle('active',i===Math.max(activeIndex,0)));
 }
 
-async function loadLetter(){
+function decodeData(token){
+  const b64=token.replace(/-/g,'+').replace(/_/g,'/');
+  const padded=b64+'='.repeat((4-b64.length%4)%4);
+  return JSON.parse(decodeURIComponent(escape(atob(padded))));
+}
+
+function loadLetter(){
   try{
-    const id=new URLSearchParams(location.search).get('id');
-    if(!id || API_BASE.includes('PASTE_YOUR'))throw new Error('missing');
-    const res=await fetch(`${API_BASE}/api/letter/${encodeURIComponent(id)}`);
-    const data=await res.json();
-    if(!res.ok)throw new Error(data.error||'not found');
+    const token=new URLSearchParams(location.search).get('data');
+    if(!token)throw new Error('missing');
+    const data=decodeData(token);
     letterData=data;
     recipientBig.textContent=data.theirName||'My Love';
     senderSign.textContent=data.yourName||'Someone who loves you';
