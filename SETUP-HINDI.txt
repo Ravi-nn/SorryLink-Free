@@ -1,0 +1,59 @@
+SorryLink Razorpay Auto Verification Setup
+
+Files for GitHub Pages:
+- index.html
+- view.html
+- style.css
+- script.js
+- view.js
+
+Files for Cloudflare Worker:
+- worker.js
+- wrangler.toml
+
+1) Razorpay Dashboard
+- Settings > API Keys me jao.
+- Key ID aur Key Secret generate karo.
+- Payment capture automatic ON rakho.
+
+2) Cloudflare Worker deploy
+- Cloudflare account banao.
+- Workers & Pages > KV > Create namespace: LETTERS
+- wrangler.toml me KV namespace id paste karo.
+- Worker deploy karo.
+- Worker variables/secrets add karo:
+  RAZORPAY_KEY_ID = your_key_id
+  RAZORPAY_KEY_SECRET = your_key_secret
+  FRONTEND_ORIGIN = https://ravi-nn.github.io
+
+Wrangler commands:
+npm install -g wrangler
+wrangler login
+wrangler kv namespace create LETTERS
+wrangler secret put RAZORPAY_KEY_ID
+wrangler secret put RAZORPAY_KEY_SECRET
+wrangler deploy
+
+3) GitHub Pages setup
+- Cloudflare Worker URL copy karo, example:
+  https://sorrylink-api.yourname.workers.dev
+- script.js me API_BASE replace karo.
+- view.js me API_BASE replace karo.
+- index.html, view.html, style.css, script.js, view.js GitHub repo root me upload karo.
+
+4) Flow
+- User form fill karega.
+- Pay ₹49 button Razorpay checkout open karega.
+- Payment successful hone ke baad Cloudflare Worker signature verify karega.
+- Verification ke baad ek paid shareable link generate hoga:
+  https://ravi-nn.github.io/SorryLink/view.html?id=xxxx
+
+Important:
+- GitHub Pages alone payment verify nahi kar sakta.
+- Razorpay key secret kabhi GitHub me upload mat karna. Sirf Cloudflare Worker secret me rakho.
+
+
+SECURE LINK RULE:
+- Payment verify hone ke baad Worker KV me letter sirf 5 minutes ke liye save karega.
+- view.html par link open hote hi Worker letter delete kar dega.
+- Matlab one paid link one-time open hai, aur 5 min me expire ho jayega.

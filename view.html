@@ -7,25 +7,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=free1" />
+  <link rel="stylesheet" href="style.css?v=11" />
 </head>
 <body>
+  <button id="musicBtn" class="music">♫</button>
   <main class="app">
-    <section id="loading" class="page active loading-page">
+    <section id="loadingPage" class="page active loading-page">
       <div class="roses">🌹 🌹 🌹</div>
-      <h2>Opening your letter...</h2>
+      <h2>Something special is loading for you...</h2>
       <div class="progress"><span></span></div>
+      <p class="spaced">PREPARED WITH LOVE ✦</p>
     </section>
 
-    <section id="letter" class="page">
+    <section id="introPage" class="page center-page">
       <p class="tag">✦ A MESSAGE FOR YOU ✦</p>
-      <h1 id="toName">My Love</h1>
+      <h1 id="recipientBig">My Love</h1>
       <p class="italic">There are things I should have said sooner.<br>This is my attempt.</p>
+      <button class="main-btn" id="readBtn">READ MY HEART 🌹</button>
+      <p class="spaced small">SECONDS SINCE I STARTED MISSING YOU</p>
+      <div id="seconds" class="seconds">6</div>
+    </section>
+
+    <section id="letterPage" class="page">
+      <h1>Everything I never said</h1>
+      <p class="sub">Scroll and let it settle in.</p>
       <div id="letterCards"></div>
       <div class="last-box">
         <div class="pill">✦ ONE LAST THING FROM ME...</div>
         <p id="customText"></p>
       </div>
+      <button class="main-btn" id="meterBtn">ONE MORE THING 🌸</button>
+    </section>
+
+    <section id="meterPage" class="page center-page">
+      <div class="panel meter-panel">
+        <p class="tag">✦ COMPLETELY SCIENTIFIC ✦</p>
+        <h2>The Forgiveness Meter™</h2>
+        <p class="sub">Advanced AI is calculating exactly how much this person deserves to be forgiven right now...</p>
+        <div id="meterPercent">50%</div>
+        <div class="meter"><span id="meterFill"></span></div>
+        <p id="meterStatus" class="spaced">Initialising quantum love sensors...</p>
+        <div id="meterResult" class="hidden">
+          <div class="broken">💔</div>
+          <h2>Cuteness Meter Broken</h2>
+          <p>You are officially <b>120%</b> more cute than anyone else in the universe.</p>
+          <button class="main-btn" id="finalBtn">I LOVE YOU 🌹</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="finalPage" class="page center-page">
       <div class="panel final-card">
         <div class="rose-big">🌹</div>
         <h1>You are still<br>my favourite</h1>
@@ -35,13 +66,15 @@
       </div>
     </section>
 
-    <section id="error" class="page center-page">
+    <section id="errorPage" class="page center-page">
       <div class="panel">
         <h2>Link not found</h2>
         <p class="sub">This letter link is invalid, already opened, or expired after 5 minutes.</p>
       </div>
     </section>
   </main>
-  <script src="view.js?v=free1"></script>
+
+  <div class="dots"><span></span><span></span><span></span><span></span><span></span></div>
+  <script src="view.js?v=11"></script>
 </body>
 </html>
